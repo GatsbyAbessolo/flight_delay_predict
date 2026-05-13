@@ -1,0 +1,11 @@
+services:
+  flight-api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: flight-delay-api
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    environment:
+      - ENVIRONMENT=docker
